@@ -34,6 +34,7 @@ namespace MovieLibrary.Controllers
             }
         }
 
+<<<<<<< HEAD
         public IHttpActionResult Get(int MovieId)
         {
             using (ApplicationDbContext context = new ApplicationDbContext())
@@ -89,6 +90,44 @@ namespace MovieLibrary.Controllers
 
         [HttpPost]
         public IHttpActionResult Post([FromBody]Movie value)
+=======
+        //reference- player tracker for seed data
+        // GET api/values
+        public IEnumerable<MovieInfo> Get()
+        {
+            var movieInfoList = new List<MovieInfo>();
+            for (int i = 0; i < 5; i++)
+            {
+                var movieInfo = new MovieInfo
+                {
+                    Title = $"Title {i}",
+                    Director = $"Direcotr {i}",
+                    Genre = $"Genre {i}",
+                    
+                };
+                movieInfoList.Add(movieInfoList);
+            }
+            // Retrieve all movies from db logic
+            return new string[] { "movie1 string", "movie2 string" };
+        }
+
+        // GET api/values/5 - To read or get values from DB
+        public string Get(int id)
+        {
+            return new MovieInfo
+            {
+                Title = $"Title {id}",
+                Director = $"Direcotr {id}",
+                Genre = $"Genre {id}",
+
+            };
+            // Retrieve movie by id from db logic
+            return "value";
+        }
+
+        // POST api/values - Submit new information or add new customer to DB
+        public void Post([FromBody]Movie value)
+>>>>>>> ef09e5db26e5c34af96173b2a0ffd52dba10c196
         {
             try
             {
@@ -109,9 +148,14 @@ namespace MovieLibrary.Controllers
             }
         }
 
+<<<<<<< HEAD
         [HttpPut]
 
         public IHttpActionResult Put(int id, [FromBody]Movie movie)
+=======
+        // PUT api/values/5 - Edit
+        public void Put(int id, [FromBody]string value)
+>>>>>>> ef09e5db26e5c34af96173b2a0ffd52dba10c196
         {
 
             using (ApplicationDbContext context = new ApplicationDbContext())
@@ -133,7 +177,12 @@ namespace MovieLibrary.Controllers
             }
         }
 
+<<<<<<< HEAD
         public IHttpActionResult Delete(int id)
+=======
+        // DELETE api/values/5 - Removing values
+        public void Delete(int id)
+>>>>>>> ef09e5db26e5c34af96173b2a0ffd52dba10c196
         {
             try
             {
