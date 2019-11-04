@@ -10,6 +10,13 @@ namespace WebAPISample.Controllers
 {
     public class MovieController : ApiController
     {
+        ApplicationDbContext context;
+        public MovieController()
+        {
+            context = new ApplicationDbContext();
+        }
+
+        //reference- player tracker for seed data
         // GET api/values
         public IEnumerable<string> Get()
         {
