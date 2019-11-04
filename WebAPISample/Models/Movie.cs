@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace WebAPISample.Models
+namespace WebAPI_Cala_Jobs.Models
 {
     public class Movie
     {

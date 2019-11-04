@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace WebAPISample.Controllers
+namespace WebAPI_Cala_Jobs.Controllers
 {
     public class HomeController : Controller
     {
