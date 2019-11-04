@@ -4,12 +4,19 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using WebAPI_Cala_Jobs.Models;
+using WebAPISample.Models;
 
-namespace WebAPI_Cala_Jobs.Controllers
+namespace WebAPISample.Controllers
 {
     public class MovieController : ApiController
     {
+        ApplicationDbContext context;
+        public MovieController()
+        {
+            context = new ApplicationDbContext();
+        }
+
+        //reference- player tracker for seed data
         // GET api/values
         public IEnumerable<MovieInfo> Get()
         {
