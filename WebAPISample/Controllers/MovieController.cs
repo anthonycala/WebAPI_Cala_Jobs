@@ -1,53 +1,151 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using WebAPISample.Models;
 
-namespace WebAPISample.Controllers
+namespace MovieLibrary.Controllers
 {
+
     public class MovieController : ApiController
     {
-        ApplicationDbContext context;
+        ApplicationDbContext db;
         public MovieController()
         {
-            context = new ApplicationDbContext();
+            db = new ApplicationDbContext();
+        }
+        public IHttpActionResult Get()
+        {
+            using (ApplicationDbContext context = new ApplicationDbContext())
+            {
+                try
+                {
+                    var movies = context.Movies.ToList();
+
+                    return Ok(movies);
+                }
+                catch
+                {
+                    return BadRequest();
+                }
+            }
         }
 
-        //reference- player tracker for seed data
-        // GET api/values
-        public IEnumerable<string> Get()
+        public IHttpActionResult Get(int MovieId)
         {
-            // Retrieve all movies from db logic
-            return new string[] { "movie1 string", "movie2 string" };
+            using (ApplicationDbContext context = new ApplicationDbContext())
+            {
+                try
+                {
+                    var movies = context.Movies.Where(m => m.MovieId == MovieId).FirstOrDefault();
+
+                    return Ok(movies);
+                }
+                catch
+                {
+                    return BadRequest();
+                }
+            }
+
         }
 
-        // GET api/values/5
-        public string Get(int id)
+        public IHttpActionResult Get(string searchType, string searchText)
         {
-            // Retrieve movie by id from db logic
-            return "value";
+            try
+            {
+                searchText = searchText.ToLower();
+                searchType = searchType.ToLower();
+                if (searchType == "Title")
+                {
+                    var results = db.Movies.Where(m => m.Title.Contains(searchText)).ToList();
+
+                    return Ok(results);
+                }
+                else if (searchType == "Director")
+                {
+                    var results = db.Movies.Where(m => m.Director.Contains(searchText)).ToList();
+
+                    return Ok(results);
+                }
+                else if (searchType == "Genre")
+                {
+                    var results = db.Movies.Where(m => m.Genre.Contains(searchText)).ToList();
+
+                    return Ok(results);
+                }
+                else
+                {
+                    return BadRequest();
+                }
+            }
+            catch
+            {
+                return BadRequest();
+            }
         }
 
-        // POST api/values
-        public void Post([FromBody]Movie value)
+        [HttpPost]
+        public IHttpActionResult Post([FromBody]Movie value)
         {
-            // Create movie in db logic
+            try
+            {
+                if (value.Title != null && value.Genre != null && value.Director != null)
+                {
+                    db.Movies.Add(value);
+                    db.SaveChangesAsync();
+                    return Ok(value);
+                }
+                else
+                {
+                    return BadRequest();
+                }
+            }
+            catch
+            {
+                return BadRequest();
+            }
         }
 
-        // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
+        [HttpPut]
+
+        public IHttpActionResult Put(int id, [FromBody]Movie movie)
         {
-            // Update movie in db logic
+
+            using (ApplicationDbContext context = new ApplicationDbContext())
+            {
+                try
+                {
+                    var movies = context.Movies.FirstOrDefault(m => m.MovieId == id);
+
+                    movies.Title = movie.Title;
+                    movies.Genre = movie.Genre;
+                    movies.Director = movie.Director;
+                    context.SaveChanges();
+                    return Ok();
+                }
+                catch
+                {
+                    return BadRequest();
+                }
+            }
         }
 
-        // DELETE api/values/5
-        public void Delete(int id)
+        public IHttpActionResult Delete(int id)
         {
-            // Delete movie from db logic
+            try
+            {
+                Movie movie = db.Movies.Where(m => m.MovieId == id).Single();
+                db.Movies.Remove(movie);
+                db.SaveChanges();
+                return Ok();
+            }
+            catch
+            {
+                return BadRequest();
+            }
         }
     }
-
 }
