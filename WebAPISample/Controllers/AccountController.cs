@@ -13,9 +13,10 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
-using WebAPI_Cala_Jobs.Models;
-using WebAPI_Cala_Jobs.Providers;
-using WebAPI_Cala_Jobs.Results;
+using WebAPISample;
+using WebAPISample.Models;
+using WebAPISample.Providers;
+using WebAPISample.Results;
 
 namespace WebAPI_Cala_Jobs.Controllers
 {
