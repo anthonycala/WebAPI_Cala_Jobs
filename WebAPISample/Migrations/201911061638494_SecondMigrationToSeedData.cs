@@ -3,14 +3,16 @@ namespace WebAPISample.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class migone : DbMigration
+    public partial class SecondMigrationToSeedData : DbMigration
     {
         public override void Up()
         {
+            AddColumn("dbo.Movies", "Genre", c => c.String());
         }
         
         public override void Down()
         {
+            DropColumn("dbo.Movies", "Genre");
         }
     }
 }

@@ -1,0 +1,327 @@
+{
+	"info": {
+		"_postman_id": "d5887b70-2027-49d4-b9fa-7447a265caac",
+		"name": "Movie",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://localhost:44352/api/movie",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44352/api/movie",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44352",
+					"path": [
+						"api",
+						"movie"
+					]
+				},
+				"description": "Get Test Results"
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44352/api/movie",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44352/api/movie",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44352",
+					"path": [
+						"api",
+						"movie"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "https://localhost:44352/api/movie",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44352/api/movie",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"movie"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-SourceFiles",
+							"value": "=?UTF-8?B?XFxNYWNcSG9tZVxEZXNrdG9wXFdlYkFQSVN0YXJ0ZXJcV2ViQVBJU2FtcGxlXGFwaVxtb3ZpZQ==?="
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 06 Nov 2019 17:19:35 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "420"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"MovieId\": 1,\n        \"Title\": \"The Departed\",\n        \"Director\": \"Martin Scorsese\",\n        \"Genre\": \"Drama\"\n    },\n    {\n        \"MovieId\": 2,\n        \"Title\": \"The Dark Knight\",\n        \"Director\": \"Christopher Nolan\",\n        \"Genre\": \"Drama\"\n    },\n    {\n        \"MovieId\": 3,\n        \"Title\": \"Inception\",\n        \"Director\": \"Christopher Nolan\",\n        \"Genre\": \"Drama\"\n    },\n    {\n        \"MovieId\": 4,\n        \"Title\": \"Pineapple Express\",\n        \"Director\": \"David Gordon Green\",\n        \"Genre\": \"Comedy\"\n    },\n    {\n        \"MovieId\": 5,\n        \"Title\": \"Die Hard\",\n        \"Director\": \"John McTiernan\",\n        \"Genre\": \"Action\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "https://localhost:44352/api/movie/6",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \r\n       \"Title\": \"The Matrix 2\",\r\n       \"Director\": \"Keanu Reeves\",\r\n       \"Genre\": \"Sci Fi\"\r\n   }\r\n   ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44352/api/movie",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44352",
+					"path": [
+						"api",
+						"movie"
+					]
+				},
+				"description": "Post worked it added The Matrix to my database"
+			},
+			"response": [
+				{
+					"name": "https://localhost:44352/api/movie",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44352/api/movie",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"movie"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-SourceFiles",
+							"value": "=?UTF-8?B?XFxNYWNcSG9tZVxEZXNrdG9wXFdlYkFQSVN0YXJ0ZXJcV2ViQVBJU2FtcGxlXGFwaVxtb3ZpZQ==?="
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 06 Nov 2019 17:19:35 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "420"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"MovieId\": 1,\n        \"Title\": \"The Departed\",\n        \"Director\": \"Martin Scorsese\",\n        \"Genre\": \"Drama\"\n    },\n    {\n        \"MovieId\": 2,\n        \"Title\": \"The Dark Knight\",\n        \"Director\": \"Christopher Nolan\",\n        \"Genre\": \"Drama\"\n    },\n    {\n        \"MovieId\": 3,\n        \"Title\": \"Inception\",\n        \"Director\": \"Christopher Nolan\",\n        \"Genre\": \"Drama\"\n    },\n    {\n        \"MovieId\": 4,\n        \"Title\": \"Pineapple Express\",\n        \"Director\": \"David Gordon Green\",\n        \"Genre\": \"Comedy\"\n    },\n    {\n        \"MovieId\": 5,\n        \"Title\": \"Die Hard\",\n        \"Director\": \"John McTiernan\",\n        \"Genre\": \"Action\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "https://localhost:44352/api/movie/6",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \r\n       \"MovieId\": 7,\r\n       \"Title\": \"The Matrix 2\",\r\n       \"Director\": \"Keanu Reeves\",\r\n       \"Genre\": \"Sci Fi\"\r\n   }\r\n   ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44352/api/movie/7",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44352",
+					"path": [
+						"api",
+						"movie",
+						"7"
+					]
+				},
+				"description": "Put"
+			},
+			"response": [
+				{
+					"name": "https://localhost:44352/api/movie",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44352/api/movie",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"movie"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-SourceFiles",
+							"value": "=?UTF-8?B?XFxNYWNcSG9tZVxEZXNrdG9wXFdlYkFQSVN0YXJ0ZXJcV2ViQVBJU2FtcGxlXGFwaVxtb3ZpZQ==?="
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 06 Nov 2019 17:19:35 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "420"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"MovieId\": 1,\n        \"Title\": \"The Departed\",\n        \"Director\": \"Martin Scorsese\",\n        \"Genre\": \"Drama\"\n    },\n    {\n        \"MovieId\": 2,\n        \"Title\": \"The Dark Knight\",\n        \"Director\": \"Christopher Nolan\",\n        \"Genre\": \"Drama\"\n    },\n    {\n        \"MovieId\": 3,\n        \"Title\": \"Inception\",\n        \"Director\": \"Christopher Nolan\",\n        \"Genre\": \"Drama\"\n    },\n    {\n        \"MovieId\": 4,\n        \"Title\": \"Pineapple Express\",\n        \"Director\": \"David Gordon Green\",\n        \"Genre\": \"Comedy\"\n    },\n    {\n        \"MovieId\": 5,\n        \"Title\": \"Die Hard\",\n        \"Director\": \"John McTiernan\",\n        \"Genre\": \"Action\"\n    }\n]"
+				}
+			]
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -13,12 +13,11 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
-using WebAPISample;
 using WebAPISample.Models;
 using WebAPISample.Providers;
 using WebAPISample.Results;
 
-namespace WebAPI_Cala_Jobs.Controllers
+namespace WebAPISample.Controllers
 {
     [Authorize]
     [RoutePrefix("api/Account")]

@@ -10,19 +10,17 @@ namespace WebAPISample.Controllers
 {
     public class MovieController : ApiController
     {
+        // GET api/movie
         ApplicationDbContext db;
         public MovieController()
         {
             db = new ApplicationDbContext();
         }
-
-        // GET api/movie
         public IEnumerable<Movie> Get()
         {
+            // Retrieve all movies from db logic
             return db.Movies.ToList();
         }
-
-        // GET api/movie/1
         public IHttpActionResult Get(int id)
         {
             // Retrieve movie by id from db logic
@@ -44,8 +42,6 @@ namespace WebAPISample.Controllers
             movie.Director = value.Director;
             db.Movies.Add(movie);
             db.SaveChanges();
-            db.Movies.Add(movie);
-            db.SaveChanges();
         }
 
         // PUT api/values/5
@@ -56,7 +52,6 @@ namespace WebAPISample.Controllers
             movies.Director = movie.Director;
             movies.Genre = movie.Genre;
             movies.Title = movie.Title;
-
             db.SaveChanges();
         }
 

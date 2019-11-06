@@ -7,13 +7,13 @@ namespace WebAPISample.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class migone : IMigrationMetadata
+    public sealed partial class SecondMigrationToSeedData : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(migone));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(SecondMigrationToSeedData));
         
         string IMigrationMetadata.Id
         {
-            get { return "201911051754457_migone"; }
+            get { return "201911061638494_SecondMigrationToSeedData"; }
         }
         
         string IMigrationMetadata.Source
